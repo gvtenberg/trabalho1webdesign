@@ -5,3 +5,22 @@ body {
 header, section, input, textarea, footer {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
+
+/* Animação das logomarcas */
+@keyframes rolar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.logos {
+    display: flex;
+    flex-shrink: 0; /* Impede que o bloco seja esmagado na tela */
+    gap: 4rem;
+    padding-right: 4rem; /* Mesmo valor do gap para o loop não dar "pulo" */
+    animation: rolar 40s linear infinite;
+}
+
+.degrade {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
