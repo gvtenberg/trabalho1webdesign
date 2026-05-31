@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     const temaSalvo = localStorage.getItem('tema');
     const fonteSalva = localStorage.getItem('fonte');
+    const lgpdAceito = localStorage.getItem('lgpd_aceito');
 
     if(temaSalvo === 'escuro') {
         htmlElement.addClass('dark');
@@ -11,6 +12,10 @@ $(document).ready(function() {
 
     if(fonteSalva === 'serif') {
         bodyElement.removeClass('font-sans').addClass('font-serif');
+    }
+
+    if (lgpdAceito !== 'sim') {
+        $('#lgpd-banner').removeClass('hidden');
     }
 
     // Alterna o tema claro/escuro
@@ -31,6 +36,11 @@ $(document).ready(function() {
             bodyElement.removeClass('font-serif').addClass('font-sans');
             localStorage.setItem('fonte', 'sans');
         }
+    });
+
+    $('#btn-entendi').on('click', function() {
+        localStorage.setItem('lgpd_aceito', 'sim');
+        $('#lgpd-banner').addClass('hidden');
     });
 
     $('#form-contato').on('submit', function(event) {
@@ -74,7 +84,3 @@ $(document).ready(function() {
         });
     });
 });
-
-/*
- - Adicionar opção para usuário aceitar localStorage
-*/
