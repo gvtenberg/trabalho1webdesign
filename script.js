@@ -83,4 +83,25 @@ $(document).ready(function() {
             }
         });
     });
+
+    const textarea = $('#msg');
+    const contador = $('#contador-caracteres');
+    const maximo = textarea.attr('maxlength'); // pega o maxlength de forma automática
+
+    contador.text(`${maximo} caracteres restantes`);
+
+    textarea.on('input', function() {
+        const tamanhoAtual = $(this).val().length;
+        const restantes = maximo - tamanhoAtual;
+
+        contador.text(`${restantes} caracteres restantes`);
+
+        if(restantes < 50){
+            contador.removeClass('text-gray-500 dark:text-gray-400')
+                    .addClass('text-red-500 font-bold');
+        } else {
+            contador.removeClass('text-red-500 font-bold')
+                    .addClass('text-gray-500 dark:text-gray-400');
+        }
+    });
 });
