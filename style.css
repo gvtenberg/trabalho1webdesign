@@ -1,0 +1,12 @@
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-serif: "Merriweather", ui-serif, Georgia;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+}
+
+header, section, input, textarea, footer {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
