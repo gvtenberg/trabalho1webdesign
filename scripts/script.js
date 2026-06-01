@@ -8,6 +8,8 @@ $(document).ready(function() {
 
     if(temaSalvo === 'escuro') {
         htmlElement.addClass('dark');
+    } else if(temaSalvo === 'daltonico') {
+        htmlElement.addClass('daltonico');
     }
 
     if(fonteSalva === 'serif') {
@@ -20,12 +22,19 @@ $(document).ready(function() {
 
     // Alterna o tema claro/escuro
     $('#btn-tema').on('click', function() {
-        htmlElement.toggleClass('dark');
+        let temaAtual = localStorage.getItem('tema') || 'claro';
 
-        if(htmlElement.hasClass('dark'))
+        if(temaAtual === 'claro'){
+            htmlElement.addClass('dark');
             localStorage.setItem('tema', 'escuro');
-        else
+        } else if(temaAtual === 'escuro'){
+            htmlElement.removeClass('dark');
+            htmlElement.addClass('daltonico');
+            localStorage.setItem('tema', 'daltonico');
+        } else {
+            htmlElement.removeClass('daltonico');
             localStorage.setItem('tema', 'claro');
+        }
     });
 
     $('#btn-fonte').on('click', function() {
@@ -38,7 +47,7 @@ $(document).ready(function() {
         }
     });
 
-    $('#btn-entendi').on('click', function() {
+    $('#btn-lgpd').on('click', function() {
         localStorage.setItem('lgpd_aceito', 'sim');
         $('#lgpd-banner').addClass('hidden');
     });

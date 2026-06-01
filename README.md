@@ -1,7 +1,13 @@
 
 # Programação para Web Designers
 
-Este repositório faz parte da disciplina Programação para Web Designers do Curso de Sistemas para Internet, e contém um projeto de site fictício chamado [AcessaWeb](https://gvtenberg.github.io/trabalho1webdesign/)
+Este repositório faz parte da disciplina Programação para Web Designers do Curso de Sistemas para Internet, e contém um projeto de site fictício chamado [AcessaWeb](https://gvtenberg.github.io/trabalho1webdesign/), onde são usadas as seguintes tecnologias:
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [jQuery](https://jquery.com/)
+- [AJAX](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Network_requests)
 
 
 ## Como usar
