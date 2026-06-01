@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="img/icon.svg">
+    <title>AcessaWeb - Opção com Bootstrap</title>
+
+    <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+                    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="styles/style-bootstrap.css">
+</head>
+<body class="bootstrap-page font-sans d-flex flex-column min-vh-100">
+<!--
+<body class="bg-gray-50 text-gray-900 font-sans dark:bg-gray-900 dark:text-gray-100 daltonico:bg-yellow-50 daltonico:text-gray-900
+                                                        daltonico:selection:bg-amber-400 daltonico:selection:text-black min-h-screen flex flex-col">
+-->
+    
+    <header class="site-header shadow-sm">
+        <div class="container py-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <h1 class="brand m-0 fs-3 fw-bold">AcessaWeb</h1>
+            <div class="d-flex gap-2 flex-wrap justify-content-center">
+                <button id="btn-tema" type="button" class="btn btn-a11y fw-semibold">
+            <!--<button id="btn-tema" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600
+                                            font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 daltonico:focus:ring-amber-500
+                                            focus:ring-offset-2 dark:focus:ring-offset-gray-900 daltonico:focus:ring-offset-yellow-50"> -->
+                    Alternar Tema
+                </button>
+                <button id="btn-fonte" type="button" class="btn btn-a11y fw-semibold">
+                    Alternar Fonte
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow-1 container py-5">
+        
+        <section class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Design para todos os seus clientes</h2>
+            <p class="lead hero-text mx-auto">
+                Criamos experiências digitais acessíveis. Facilitamos a adoção de acessibilidade em todos os seus projetos.
+                Use os botões acima para testar nossas opções de contraste e legibilidade.
+            </p>
+        </section>
+
+        <section class="my-5">
+            <h2 class="fs-3 fw-bold mb-4">
+                Visualização dos Modos de Acessibilidade
+            </h2>
+            
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                <!--<div class="rounded-lg overflow-hidden shadow-lg border-2 border-transparent daltonico:border-black focus-within:ring-4
+                                    focus-within:ring-blue-500 daltonico:focus-within:ring-amber-500 dark:border-gray-400 daltonico:border-black"> -->
+                    <div class="preview-card ratio ratio-1x1">
+                        <img src="img/pagina1.png" 
+                            alt="Captura de tela do site no Modo Claro padrão" 
+                            class="preview-img">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preview-card ratio ratio-1x1">
+                        <img src="img/pagina2.png" 
+                            alt="Captura de tela do site no Modo Escuro" 
+                            class="preview-img">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preview-card ratio ratio-1x1">
+                        <img src="img/pagina3.png" 
+                            alt="Captura de tela do site no Modo Daltônico com alto contraste amarelo e preto" 
+                            class="preview-img">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="preview-card ratio ratio-1x1">
+                        <img src="img/pagina4.png" 
+                            alt="Captura de tela do site mostrando o widget do VLibras ativo" 
+                            class="preview-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5 overflow-hidden">
+            <h2 class="text-center text-uppercase fw-semibold fs-6 mb-4 section-muted">
+                Empresas que confiam na AcessaWeb
+            </h2>
+            <div class="w-100 mx-auto d-flex overflow-hidden degrade">
+                <div class="logos align-items-center">
+                    <img src="img/img1.png" alt="PapiroTech" class="logo-img">
+                    <img src="img/img2.png" alt="Lumina Design" class="logo-img">
+                    <img src="img/img3.png" alt="Café com Letras" class="logo-img">
+                    <img src="img/img4.png" alt="Dev Dash" class="logo-img">
+                    <img src="img/img5.png" alt="Codespace" class="logo-img">
+                    <img src="img/img6.png" alt="DecoraTons" class="logo-img">
+                    <img src="img/img7.png" alt="Mente Plena" class="logo-img">
+                    <img src="img/img8.png" alt="Clínica Sereno" class="logo-img">
+                    <img src="img/img9.png" alt="Espaço&Cor" class="logo-img">
+                </div>
+                <div class="logos align-items-center" aria-hidden="true">
+                    <img src="img/img1.png" alt="PapiroTech" class="logo-img">
+                    <img src="img/img2.png" alt="Lumina Design" class="logo-img">
+                    <img src="img/img3.png" alt="Café com Letras" class="logo-img">
+                    <img src="img/img4.png" alt="Dev Dash" class="logo-img">
+                    <img src="img/img5.png" alt="Codespace" class="logo-img">
+                    <img src="img/img6.png" alt="DecoraTons" class="logo-img">
+                    <img src="img/img7.png" alt="Mente Plena" class="logo-img">
+                    <img src="img/img8.png" alt="Clínica Sereno" class="logo-img">
+                    <img src="img/img9.png" alt="Espaço&Cor" class="logo-img">
+                </div>
+            </div>
+        </section>
+        
+        <section class="form-card p-4 p-md-5 rounded-3 shadow-lg mb-5">
+            <h3 class="fs-3 fw-bold mb-4 pb-2 form-title">Solicite uma Auditoria</h3>
+
+            <form id="form-contato" class="vstack gap-3">
+                <div>
+                    <label for="nome" class="form-label fw-medium">Nome</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Fulano da Silva" class="form-control">
+                </div>
+                <div>
+                    <label for="email" class="form-label fw-medium">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="email@mail.com" required class="form-control">
+                <!--<input type="email" id="email" name="email" placeholder="email@mail.com" required class="w-full p-2 border rounded
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600
+                                daltonico:focus:ring-amber-500 daltonico:border-black daltonico:focus:border-amber-500"> -->
+                </div>
+                <div>
+                    <label for="site" class="form-label fw-medium">Seu site</label>
+                    <input type="url" id="site" name="site" placeholder="https://seusite.com.br" class="form-control">
+                </div>
+                <div>
+                    <label for="msg" class="form-label fw-medium">Mensagem</label>
+                    <textarea id="msg" name="msg" placeholder="Conte-nos um pouco sobre o seu site e os desafios de acessibilidade que você enfrenta..."
+                                    rows="4" maxlength="500" required class="form-control"></textarea>
+                <p id="contador-caracteres" class="contador-caracteres text-end small mt-1 mb-0">
+                    500 caracteres restantes
+                </p>
+                </div>
+                <button type="submit" id="btn-enviar" class="btn btn-primary-custom w-100 fw-bold py-3">
+                    Enviar Solicitação
+                </button>
+            </form>
+
+            <div id="form-feedback" aria-live="polite" class="hidden mt-3 p-3 rounded fw-bold text-center"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer text-center py-4 mt-auto">
+        <p class="mb-1">© 2026 AcessaWeb</p>
+        <p class="mb-0">Guntemberg P. Oliveira, Maria Eduarda P. da Silva, Vinicius M. Rocha</p>
+    </footer>
+
+    <div id="lgpd-banner" class="lgpd-banner hidden">
+        <p class="mb-0 text-center text-sm-start">
+            Em atendimento à <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" class="lgpd-link">
+                        Lei Geral de Proteção de Dados Pessoais (LGPD)</a> do Brasil, informamos que usamos o armazenamento local do seu navegador
+                        para salvar suas preferências de acessibilidade (tema e fonte). Não rastreamos seus dados.
+        </p>
+        <button id="btn-lgpd" type="button" class="btn btn-primary-custom fw-bold px-4 text-nowrap">
+            Entendi
+        </button>
+    </div>
+</body>
+</html>

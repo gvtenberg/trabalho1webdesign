@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    let temporizadorFeedback;
+
     const htmlElement = $('html');
     const bodyElement = $('body');
 
@@ -72,17 +74,17 @@ $(document).ready(function() {
         contador.text(`${restantes} caracteres restantes`);
 
         if(restantes < 50){
-            contador.removeClass('text-gray-500 dark:text-gray-400')
-                    .addClass('text-red-500 font-bold');
+            contador.addClass('contador-alerta');
         } else {
-            contador.removeClass('text-red-500 font-bold')
-                    .addClass('text-gray-500 dark:text-gray-400');
+            contador.removeClass('contador-alerta');
         }
     });
 
     $('#form-contato').on('submit', function(event) {
         event.preventDefault(); // Evita o recarregamento da página
         const submitButton = $('#btn-enviar');
+        const feedbackDiv = $('#form-feedback');
+        feedbackDiv.addClass("hidden");
 
         const dadosForm = {
             title: $('#nome').val(),
@@ -92,12 +94,8 @@ $(document).ready(function() {
             userId: 1 // exigência do jsonplaceholder
         };
 
-        const feedbackDiv = $('#form-feedback');
-
-        feedbackDiv.removeClass('hidden bg-green-100 text-green-800 bg-red-100 text-red-800')
-                    .addClass('bg-gray-200 text-gray-800')
+        submitButton.prop('disabled', true)
                     .text('Enviando...');
-        feedbackDiv.show();
 
         $.ajax({
             url: 'https://jsonplaceholder.typicode.com/posts',
@@ -107,20 +105,33 @@ $(document).ready(function() {
             success: function (response) {
                 console.log('Resposta do servidor: ', response);
 
-                feedbackDiv.removeClass('bg-gray-200 text-gray-800')
-                            .addClass('bg-green-100 text-green-800')
-                            .html(`Mensagem enviada com sucesso! Entraremos em contato em breve<br>Número de protocolo: ${response.id}`);
+                feedbackDiv.removeClass('hidden feedback-info feedback-error')
+                            .addClass('feedback-success')
+                            .html(`Mensagem enviada com sucesso! Entraremos em contato em breve.<br>Número de protocolo: ${response.id}`);
                 
                 $('#form-contato')[0].reset(); // Limpa o formulário
                 contador.text(`${maximo} caracteres restantes`);
-                contador.removeClass('text-red-500 font-bold')
-                        .addClass('text-gray-500 dark:text-gray-400');
+                contador.removeClass('contador-alerta');
+                esconderFeedback()
             },
             error: function() {
-                feedbackDiv.removeClass('bg-gray-200 text-gray-800')
-                            .addClass('bg-red-100 text-red-800')
+                feedbackDiv.removeClass('hidden feedback-info feedback-success')
+                            .addClass('feedback-error')
                             .text('Erro ao enviar mensagem. Por favor, tente novamente');
+                esconderFeedback()
+            },
+            complete: function() {
+                submitButton.prop('disabled', false)
+                            .text('Enviar Solicitação');
             }
         });
     });
+
+    function esconderFeedback() {
+        clearTimeout(temporizadorFeedback);
+
+        temporizadorFeedback = setTimeout(function() {
+            $('#form-feedback').addClass('hidden');
+        }, 10000);
+    }
 });

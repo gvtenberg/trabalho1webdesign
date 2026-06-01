@@ -1,14 +1,49 @@
 
 # Programação para Web Designers
 
-Este repositório faz parte da disciplina Programação para Web Designers do Curso de Sistemas para Internet, e contém um projeto de site fictício chamado [AcessaWeb](https://gvtenberg.github.io/trabalho1webdesign/), onde são usadas as seguintes tecnologias:
+Este repositório faz parte da disciplina Programação para Web Designers do Curso de Sistemas para Internet, e contém um projeto de site fictício chamado [AcessaWeb](https://gvtenberg.github.io/trabalho1webdesign/), com uma versão usando Tailwind CSS e outra usando Bootstrap (link direto [aqui](https://gvtenberg.github.io/trabalho1webdesign/index2.html)), onde são usadas as seguintes tecnologias:
 - [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [jQuery](https://jquery.com/)
 - [AJAX](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Network_requests)
+- [Bootstrap](https://getbootstrap.com/)
 
+## Estrutura do repositório
+```text
+repositório/
+├── README.md
+│
+├── index.html (versão Tailwind CSS)
+│
+├── index2.html (versão Bootstrap)
+│
+├── css/
+│   ├── style-tailwind.css
+│   ├── style-bootstrap.css
+|   └── tailwind-config.js
+│
+├── scripts/
+│   └── script.js
+│
+│
+├── img/
+│   ├── icon.svg
+│   ├── pagina1.png
+│   ├── pagina2.png
+│   ├── pagina3.png
+│   ├── pagina4.png
+│   ├── img1.png
+│   ├── img2.png
+│   ├── img3.png
+│   ├── img4.png
+│   ├── img5.png
+│   ├── img6.png
+│   ├── img7.png
+│   ├── img8.png
+│   └── img9.png
+```
 
 ## Como usar
 

@@ -1,0 +1,329 @@
+.hidden {
+    display: none !important;
+}
+
+.font-sans {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-serif {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.font-dislexia {
+    font-family: OpenDyslexic, sans-serif;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+}
+
+header, section, input, textarea, button, footer, a {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animação das logomarcas */
+@keyframes rolar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.logos {
+    display: flex;
+    flex-shrink: 0; /* Impede que o bloco seja esmagado na tela */
+    gap: 4rem;
+    padding-right: 4rem; /* Mesmo valor do gap para o loop não dar "pulo" */
+    animation: rolar 40s linear infinite;
+}
+
+.degrade {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logos {
+        animation: none;
+    }
+
+    body, header, section, input, textarea, button, footer, a {
+        transition: none;
+    }
+}
+
+.logo-img {
+    height: 2.5rem;
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+.feedback-info {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+.feedback-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.feedback-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.contador-caracteres {
+    color: #6b7280;
+}
+
+.contador-alerta {
+    color: #ef4444 !important;
+    font-weight: 700;
+}
+
+.bootstrap-page {
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+.bootstrap-page .site-header,
+.bootstrap-page .form-card {
+    background-color: #ffffff;
+}
+
+.bootstrap-page .brand {
+    color: #2563eb;
+}
+
+.bootstrap-page .hero-text {
+    max-width: 760px;
+    color: #4b5563;
+}
+
+.bootstrap-page .section-muted,
+.bootstrap-page .site-footer,
+.bootstrap-page .contador-caracteres {
+    color: #6b7280;
+}
+
+.bootstrap-page .site-footer {
+    background-color: #e5e7eb;
+}
+
+.bootstrap-page .form-title {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.bootstrap-page .btn-a11y {
+    background-color: #e5e7eb;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+}
+
+.bootstrap-page .btn-a11y:hover {
+    background-color: #d1d5db;
+    color: #111827;
+    border-color: #d1d5db;
+}
+
+.bootstrap-page .btn-primary-custom {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+.bootstrap-page .btn-primary-custom:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    color: #ffffff;
+}
+
+.bootstrap-page .preview-card {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+.bootstrap-page .preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.bootstrap-page .preview-img:hover {
+    transform: scale(1.05);
+}
+
+.lgpd-banner {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1050;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(31, 41, 55, 0.92);
+    color: #ffffff;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lgpd-link {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.lgpd-link:hover {
+    color: #93c5fd;
+}
+
+html.dark .bootstrap-page {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+html.dark .bootstrap-page .site-header,
+html.dark .bootstrap-page .form-card,
+html.dark .bootstrap-page .site-footer {
+    background-color: #1f2937;
+}
+
+html.dark .bootstrap-page .brand {
+    color: #60a5fa;
+}
+
+html.dark .bootstrap-page .hero-text,
+html.dark .bootstrap-page .section-muted,
+html.dark .bootstrap-page .site-footer,
+html.dark .bootstrap-page .contador-caracteres {
+    color: #d1d5db;
+}
+
+html.dark .bootstrap-page .form-title {
+    border-bottom-color: #374151;
+}
+
+html.dark .bootstrap-page .form-control {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+html.dark .bootstrap-page .form-control::placeholder {
+    color: #cbd5e1;
+}
+
+html.dark .bootstrap-page .btn-a11y {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #374151;
+}
+
+html.dark .bootstrap-page .btn-a11y:hover {
+    background-color: #4b5563;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+html.dark .bootstrap-page .preview-card {
+    border-color: #9ca3af;
+}
+
+html.dark .lgpd-banner {
+    background-color: rgba(3, 7, 18, 0.92);
+    border-top: 1px solid #1f2937;
+}
+
+html.daltonico .bootstrap-page ::selection {
+    background-color: #fbbf24;
+    color: #000000;
+}
+
+html.daltonico .bootstrap-page {
+    background-color: #fefce8;
+    color: #111827;
+}
+
+html.daltonico .bootstrap-page .site-header,
+html.daltonico .bootstrap-page .form-card {
+    background-color: #ffffff;
+}
+
+html.daltonico .bootstrap-page .brand,
+html.daltonico .bootstrap-page h1,
+html.daltonico .bootstrap-page h2,
+html.daltonico .bootstrap-page h3 {
+    color: #000000;
+}
+
+html.daltonico .bootstrap-page .hero-text {
+    color: #000000;
+}
+
+html.daltonico .bootstrap-page .section-muted,
+html.daltonico .bootstrap-page .site-footer,
+html.daltonico .bootstrap-page .contador-caracteres {
+    color: #6b7280;
+}
+
+html.daltonico .bootstrap-page .form-control,
+html.daltonico .bootstrap-page .preview-card {
+    border-color: #000000;
+}
+
+html.daltonico .bootstrap-page .form-control:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 0.25rem rgba(251, 191, 36, 0.35);
+}
+
+html.daltonico .bootstrap-page .btn:focus,
+html.daltonico .bootstrap-page .btn:focus-visible {
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 0.25rem rgba(251, 191, 36, 0.35);
+}
+
+html.daltonico .bootstrap-page .btn-a11y {
+    background-color: #e5e7eb;
+    color: #000000;
+    border-color: #d1d5db;
+}
+
+html.daltonico .bootstrap-page .btn-a11y:hover {
+    background-color: #d1d5db;
+    color: #000000;
+}
+
+html.daltonico .bootstrap-page .btn-primary-custom {
+    background-color: #fbbf24;
+    border-color: #fbbf24;
+    color: #000000;
+}
+
+html.daltonico .bootstrap-page .btn-primary-custom:hover {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+    color: #000000;
+}
+
+html.daltonico .lgpd-link {
+    color: #fbbf24;
+}
+
+@media (min-width: 576px) {
+    .lgpd-banner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
