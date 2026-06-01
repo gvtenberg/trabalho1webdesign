@@ -59,6 +59,27 @@ $(document).ready(function() {
         $('#lgpd-banner').addClass('hidden');
     });
 
+    const textarea = $('#msg');
+    const contador = $('#contador-caracteres');
+    const maximo = textarea.attr('maxlength'); // pega o maxlength de forma automática
+
+    contador.text(`${maximo} caracteres restantes`);
+
+    textarea.on('input', function() {
+        const tamanhoAtual = $(this).val().length;
+        const restantes = maximo - tamanhoAtual;
+
+        contador.text(`${restantes} caracteres restantes`);
+
+        if(restantes < 50){
+            contador.removeClass('text-gray-500 dark:text-gray-400')
+                    .addClass('text-red-500 font-bold');
+        } else {
+            contador.removeClass('text-red-500 font-bold')
+                    .addClass('text-gray-500 dark:text-gray-400');
+        }
+    });
+
     $('#form-contato').on('submit', function(event) {
         event.preventDefault(); // Evita o recarregamento da página
         const submitButton = $('#btn-enviar');
@@ -91,6 +112,9 @@ $(document).ready(function() {
                             .html(`Mensagem enviada com sucesso! Entraremos em contato em breve<br>Número de protocolo: ${response.id}`);
                 
                 $('#form-contato')[0].reset(); // Limpa o formulário
+                contador.text(`${maximo} caracteres restantes`);
+                contador.removeClass('text-red-500 font-bold')
+                        .addClass('text-gray-500 dark:text-gray-400');
             },
             error: function() {
                 feedbackDiv.removeClass('bg-gray-200 text-gray-800')
@@ -98,26 +122,5 @@ $(document).ready(function() {
                             .text('Erro ao enviar mensagem. Por favor, tente novamente');
             }
         });
-    });
-
-    const textarea = $('#msg');
-    const contador = $('#contador-caracteres');
-    const maximo = textarea.attr('maxlength'); // pega o maxlength de forma automática
-
-    contador.text(`${maximo} caracteres restantes`);
-
-    textarea.on('input', function() {
-        const tamanhoAtual = $(this).val().length;
-        const restantes = maximo - tamanhoAtual;
-
-        contador.text(`${restantes} caracteres restantes`);
-
-        if(restantes < 50){
-            contador.removeClass('text-gray-500 dark:text-gray-400')
-                    .addClass('text-red-500 font-bold');
-        } else {
-            contador.removeClass('text-red-500 font-bold')
-                    .addClass('text-gray-500 dark:text-gray-400');
-        }
     });
 });

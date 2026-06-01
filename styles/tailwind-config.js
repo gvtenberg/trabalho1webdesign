@@ -3,8 +3,8 @@ tailwind.config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                serif: ['Merriweather', 'serif'],
+                sans: ['Arial', 'sans-serif'],
+                serif: ['Georgia', 'serif'],
                 dislexia: ['OpenDyslexic', 'sans-serif']
             }
         }

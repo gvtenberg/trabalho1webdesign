@@ -24,3 +24,13 @@ header, section, input, textarea, button, footer, a {
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .logos {
+        animation: none;
+    }
+
+    body, header, section, input, textarea, button, footer, a {
+        transition: none;
+    }
+}
