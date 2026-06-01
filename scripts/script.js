@@ -2,18 +2,20 @@ $(document).ready(function() {
     const htmlElement = $('html');
     const bodyElement = $('body');
 
-    const temaSalvo = localStorage.getItem('tema');
-    const fonteSalva = localStorage.getItem('fonte');
+    const temaSalvo = localStorage.getItem('tema') || 'claro';
+    const fonteSalva = localStorage.getItem('fonte') || 'sans';
     const lgpdAceito = localStorage.getItem('lgpd_aceito');
 
     if(temaSalvo === 'escuro') {
-        htmlElement.addClass('dark');
+        htmlElement.removeClass('daltonico').addClass('dark');
     } else if(temaSalvo === 'daltonico') {
-        htmlElement.addClass('daltonico');
+        htmlElement.removeClass('dark').addClass('daltonico');
     }
 
     if(fonteSalva === 'serif') {
         bodyElement.removeClass('font-sans').addClass('font-serif');
+    } else if(fonteSalva === 'dislexia') {
+        bodyElement.removeClass('font-sans').addClass('font-dislexia');
     }
 
     if (lgpdAceito !== 'sim') {
@@ -38,11 +40,16 @@ $(document).ready(function() {
     });
 
     $('#btn-fonte').on('click', function() {
-        if(bodyElement.hasClass('font-sans')){
+        let fonteAtual = localStorage.getItem('fonte') || 'sans';
+
+        if(fonteAtual === 'sans'){
             bodyElement.removeClass('font-sans').addClass('font-serif');
             localStorage.setItem('fonte', 'serif');
+        } else if(fonteAtual === 'serif'){
+            bodyElement.removeClass('font-serif').addClass('font-dislexia');
+            localStorage.setItem('fonte', 'dislexia');
         } else {
-            bodyElement.removeClass('font-serif').addClass('font-sans');
+            bodyElement.removeClass('font-dislexia').addClass('font-sans');
             localStorage.setItem('fonte', 'sans');
         }
     });

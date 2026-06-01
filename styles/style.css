@@ -2,7 +2,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
 }
 
-header, section, input, textarea, footer {
+header, section, input, textarea, button, footer {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 

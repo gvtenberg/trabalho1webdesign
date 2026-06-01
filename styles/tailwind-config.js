@@ -4,7 +4,8 @@ tailwind.config = {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                serif: ['Merriweather', 'serif']
+                serif: ['Merriweather', 'serif'],
+                dislexia: ['OpenDyslexic', 'sans-serif']
             }
         }
     },
