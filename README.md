@@ -9,6 +9,7 @@ Este repositório faz parte da disciplina Programação para Web Designers do Cu
 - [jQuery](https://jquery.com/)
 - [AJAX](https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/Network_requests)
 - [Bootstrap](https://getbootstrap.com/)
+- Widget [VLibras](https://vlibras.gov.br/doc/widget/introduction/presentation.html)
 
 ## Estrutura do repositório
 ```text
